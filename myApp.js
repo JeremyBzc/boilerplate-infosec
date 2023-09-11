@@ -4,6 +4,7 @@ const app = express();
 // Challenge Helmet
 
 const helmet = require("helmet");
+const ninetyDaysInSeconds = 90 * 24 * 60 * 60;
 
 app.use(helmet.hidePoweredBy());
 app.use(
@@ -14,6 +15,12 @@ app.use(
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.ieNoOpen());
+app.use(
+  helmet.hsts({
+    ninetyDaysInSeconds,
+    force: true,
+  })
+);
 
 //
 
