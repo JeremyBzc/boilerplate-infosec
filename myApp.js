@@ -17,7 +17,7 @@ app.use(helmet.noSniff());
 app.use(helmet.ieNoOpen());
 app.use(
   helmet.hsts({
-    ninetyDaysInSeconds,
+    maxAge: ninetyDaysInSeconds,
     force: true,
   })
 );
