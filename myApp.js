@@ -26,7 +26,7 @@ app.use(helmet.noCache());
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self"],
+      defaultSrc: ["'self'"],
       scriptSrc: ["'self'", "trusted-cdn.com"],
     },
   })
